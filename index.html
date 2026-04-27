@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Percetakan & Photo Copy Fortuna | Banyuwangi</title>
     <!-- Google Fonts & Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Swiper JS (untuk slider animasi yang halus) -->
+    <!-- Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,12 +19,12 @@
 <!-- Navbar -->
 <nav class="navbar">
     <div class="container nav-wrapper">
-        <div class="logo">
+        <div class="logo" data-aos="fade-right">
             <h1>FORTUNA</h1>
             <p>Percetakan & Photo Copy</p>
         </div>
-        <div class="nav-links">
-            <a href="#">Beranda</a>
+        <div class="nav-links" data-aos="fade-left">
+            <a href="#home">Beranda</a>
             <a href="#layanan">Layanan</a>
             <a href="#lokasi">Lokasi</a>
             <a href="#kontak">Kontak</a>
@@ -31,134 +33,258 @@
     </div>
 </nav>
 
-<!-- Hero Slider Swiper -->
-<div class="hero-slider">
+<!-- Hero Slider -->
+<div class="hero-slider" id="home">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+            <div class="swiper-slide">
+                <div class="slide-bg" style="background-image: url('https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
-                    <h2>Cetak Cepat & Berkualitas</h2>
-                    <p>Percetakan modern + Photo Copy terpercaya di Banyuwangi</p>
+                    <h2 data-swiper-parallax="-300">Cetak Cepat & Berkualitas</h2>
+                    <p data-swiper-parallax="-200">Percetakan modern + Photo Copy terpercaya di Banyuwangi</p>
+                    <div class="slide-btn" data-swiper-parallax="-100">
+                        <a href="https://wa.me/6281999676582" class="btn-slide">Hubungi Kami <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
-            <!-- Slide 2 -->
-            <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+            <div class="swiper-slide">
+                <div class="slide-bg" style="background-image: url('https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
-                    <h2>Photo Copy & Digital Printing</h2>
-                    <p>Hasil tajam, harga bersahabat, dan pelayanan ramah</p>
+                    <h2 data-swiper-parallax="-300">Photo Copy & Digital Printing</h2>
+                    <p data-swiper-parallax="-200">Hasil tajam, harga bersahabat, dan pelayanan ramah</p>
+                    <div class="slide-btn" data-swiper-parallax="-100">
+                        <a href="#layanan" class="btn-slide">Lihat Layanan <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
-            <!-- Slide 3 -->
-            <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+            <div class="swiper-slide">
+                <div class="slide-bg" style="background-image: url('https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
-                    <h2>Desain & Cetak Spanduk</h2>
-                    <p>Solusi untuk kebutuhan promosi dan bisnis Anda</p>
+                    <h2 data-swiper-parallax="-300">Desain & Cetak Spanduk</h2>
+                    <p data-swiper-parallax="-200">Solusi untuk kebutuhan promosi dan bisnis Anda</p>
+                    <div class="slide-btn" data-swiper-parallax="-100">
+                        <a href="https://wa.me/6281999676582" class="btn-slide">Konsultasi Gratis <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
+        <div class="autoplay-progress">
+            <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" />
+                <circle class="progress-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <span></span>
+        </div>
     </div>
 </div>
 
-<!-- Layanan utama -->
+<!-- Layanan -->
 <section id="layanan" class="section">
     <div class="container">
-        <h2 class="section-title">Layanan Unggulan Kami</h2>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-subtitle">Layanan Kami</span>
+            <h2 class="section-title">Solusi Cetak <span class="highlight">Terlengkap</span></h2>
+            <p class="section-desc">Dukungan penuh untuk kebutuhan percetakan dan fotokopi Anda</p>
+        </div>
         <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-print"></i>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">
+                    <i class="fas fa-print"></i>
+                </div>
                 <h3>Cetak Digital</h3>
-                <p>Poster, brosur, undangan, buku, dan berbagai kebutuhan cetak full colour</p>
+                <p>Poster, brosur, undangan, buku, dan berbagai kebutuhan cetak full colour dengan kualitas premium</p>
+                <div class="service-hover">
+                    <span>Selengkapnya <i class="fas fa-arrow-right"></i></span>
+                </div>
             </div>
-            <div class="service-card">
-                <i class="fas fa-copy"></i>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">
+                    <i class="fas fa-copy"></i>
+                </div>
                 <h3>Photo Copy</h3>
-                <p>Fotokopi cepat untuk dokumen, modul, skripsi, dengan harga ekonomis</p>
+                <p>Fotokopi cepat untuk dokumen, modul, skripsi, dengan harga ekonomis dan hasil rapi</p>
+                <div class="service-hover">
+                    <span>Selengkapnya <i class="fas fa-arrow-right"></i></span>
+                </div>
             </div>
-            <div class="service-card">
-                <i class="fas fa-palette"></i>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
                 <h3>Desain Grafis</h3>
-                <p>Tim siap membantu desain kreatif untuk cetak yang maksimal</p>
+                <p>Tim desainer profesional siap membantu desain kreatif untuk hasil cetak yang maksimal</p>
+                <div class="service-hover">
+                    <span>Selengkapnya <i class="fas fa-arrow-right"></i></span>
+                </div>
             </div>
-            <div class="service-card">
-                <i class="fas fa-scroll"></i>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon">
+                    <i class="fas fa-scroll"></i>
+                </div>
                 <h3>Spanduk & Banner</h3>
-                <p>Material tahan lama, finishing rapi, cocok untuk event & promosi</p>
+                <p>Material tahan lama, finishing rapi, cocok untuk event, promosi, dan kebutuhan outdoor</p>
+                <div class="service-hover">
+                    <span>Selengkapnya <i class="fas fa-arrow-right"></i></span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Lokasi & Kontak Detail -->
+<!-- Statistik -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stat-number" data-target="1500">0</div>
+                <div class="stat-label">+ Pelanggan Puas</div>
+            </div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stat-number" data-target="5000">0</div>
+                <div class="stat-label">+ Pesanan Terselesaikan</div>
+            </div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">% Kepuasan Pelanggan</div>
+            </div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">Jam Cepat Selesai</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lokasi & Kontak (Peta Sudah Diperbarui) -->
 <section id="lokasi" class="info-section section">
     <div class="container">
-        <h2 class="section-title">Kunjungi Kami</h2>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-subtitle">Kunjungi Kami</span>
+            <h2 class="section-title">Lokasi <span class="highlight">Strategis</span></h2>
+            <p class="section-desc">Mudah dijangkau di pusat kota Banyuwangi</p>
+        </div>
         <div class="info-wrapper">
-            <div class="info-map">
-                <!-- Google Maps Embed (Alamat sesuai: Jl. Widuri No.03, Watu Ulo, Banjarsari, Glagah, Banyuwangi) -->
+            <!-- MAP YANG SUDAH DIPERBARUI -->
+            <div class="info-map" data-aos="fade-right">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.878431495173!2d114.254661114775!3d-8.222133594128586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd14c3c4a0a542f%3A0xc54a4b6d8c8b1b3!2sJl.%20Widuri%20No.03%2C%20Dusun%20Watu%20Ulo%2C%20Banjarsari%2C%20Kec.%20Glagah%2C%20Kabupaten%20Banyuwangi%2C%20Jawa%20Timur%2068432!5e0!3m2!1sid!2sid!4v1713000000000!5m2!1sid!2sid" 
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15803.515292245785!2d114.250178!3d-8.222013!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd142c7d8bd1cef%3A0x8d92b73353000f88!2sPERCETAKAN%2C%20PHOTO%20COPY%20DAN%20ATK%20%22FORTUNA%22!5e0!3m2!1sid!2sid!4v1745747285153!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 28px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-            <div class="info-details" id="kontak">
+            <div class="info-details" id="kontak" data-aos="fade-left">
                 <h3>Informasi Kontak</h3>
                 <div class="detail-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="text">
                         <strong>Alamat Lengkap</strong>
                         Jl. Widuri No.03, Dusun Watu Ulo, Banjarsari, Kec. Glagah,<br> Kabupaten Banyuwangi, Jawa Timur 68432
                     </div>
                 </div>
                 <div class="detail-item">
-                    <i class="fas fa-phone-alt"></i>
+                    <div class="detail-icon"><i class="fas fa-phone-alt"></i></div>
                     <div class="text">
                         <strong>Telepon</strong>
                         (0333) 416974
                     </div>
                 </div>
                 <div class="detail-item">
-                    <i class="fab fa-whatsapp"></i>
+                    <div class="detail-icon"><i class="fab fa-whatsapp"></i></div>
                     <div class="text">
                         <strong>WhatsApp</strong>
                         +62 819-9967-6582
                     </div>
                 </div>
+                <div class="detail-item">
+                    <div class="detail-icon"><i class="far fa-clock"></i></div>
+                    <div class="text">
+                        <strong>Jam Operasional</strong>
+                        Senin - Sabtu: 08.00 - 20.00<br>
+                        Minggu & Hari Besar: Konsultasi via WA
+                    </div>
+                </div>
                 <a href="https://wa.me/6281999676582?text=Halo%20Fortuna%2C%20saya%20ingin%20pesan%20layanan%20cetak%2Ffotokopi" target="_blank" class="btn-wa-big">
                     <i class="fab fa-whatsapp fa-lg"></i> Chat via WhatsApp
                 </a>
-                <p style="margin-top: 20px; font-size: 0.85rem; color: #876e4c;">Jam buka: Senin - Sabtu, 08.00 - 20.00 (Minggu & Hari Besar bisa hubungi dulu)</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Testimoni / Kepercayaan -->
+<!-- Testimoni -->
 <section class="testimoni section">
     <div class="container">
-        <h2 class="section-title">Apa Kata Pelanggan?</h2>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-subtitle">Testimoni</span>
+            <h2 class="section-title">Apa Kata <span class="highlight">Pelanggan</span>?</h2>
+            <p class="section-desc">Kepercayaan mereka adalah motivasi terbaik kami</p>
+        </div>
         <div class="testi-grid">
-            <div class="testi-card">
-                <i class="fas fa-quote-left"></i>
+            <div class="testi-card" data-aos="flip-left" data-aos-delay="100">
+                <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
                 <p>"Cetak undangan pernikahan di Fortuna hasilnya mewah dan cepat! Harganya bersahabat, pelayanannya ramah banget."</p>
-                <h4>- Citra L., Banyuwangi</h4>
+                <div class="testi-profile">
+                    <div class="testi-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="testi-info">
+                        <h4>Citra Lestari</h4>
+                        <span>Banyuwangi</span>
+                    </div>
+                </div>
+                <div class="testi-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
             </div>
-            <div class="testi-card">
-                <i class="fas fa-quote-left"></i>
+            <div class="testi-card" data-aos="flip-left" data-aos-delay="200">
+                <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
                 <p>"Fotokopi skripsi ratusan lembar beres dalam waktu singkat, rapi dan tidak terlihat buram. Rekomended!"</p>
-                <h4>- Ahmad F., Mahasiswa</h4>
+                <div class="testi-profile">
+                    <div class="testi-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="testi-info">
+                        <h4>Ahmad Faizal</h4>
+                        <span>Mahasiswa</span>
+                    </div>
+                </div>
+                <div class="testi-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
             </div>
-            <div class="testi-card">
-                <i class="fas fa-quote-left"></i>
+            <div class="testi-card" data-aos="flip-left" data-aos-delay="300">
+                <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
                 <p>"Spanduk untuk acara desa kami sangat bagus, tahan lama, dan proses desainnya cepat. Terima kasih Fortuna!"</p>
-                <h4>- Pak RT, Glagah</h4>
+                <div class="testi-profile">
+                    <div class="testi-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="testi-info">
+                        <h4>Bapak Slamet</h4>
+                        <span>Ketua RT, Glagah</span>
+                    </div>
+                </div>
+                <div class="testi-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content" data-aos="zoom-in-up">
+            <h2>Siap Mewujudkan Kebutuhan Cetak Anda?</h2>
+            <p>Konsultasikan kebutuhan Anda sekarang, kami siap membantu 24/7 via WhatsApp</p>
+            <a href="https://wa.me/6281999676582?text=Halo%20Fortuna%2C%20saya%20mau%20konsultasi%20cetak" class="cta-btn">
+                <i class="fab fa-whatsapp"></i> Konsultasi Sekarang
+            </a>
         </div>
     </div>
 </section>
@@ -167,35 +293,42 @@
 <footer>
     <div class="container">
         <div class="footer-container">
-            <div class="footer-col">
+            <div class="footer-col" data-aos="fade-right">
                 <h4>Percetakan Fortuna</h4>
                 <p>Melayani dengan sepenuh hati untuk kebutuhan cetak dan fotokopi di wilayah Banyuwangi dan sekitarnya. Presisi, cepat, dan ekonomis.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Kontak</h4>
+            <div class="footer-col" data-aos="fade-up">
+                <h4>Kontak Kami</h4>
                 <p><i class="fas fa-phone-alt"></i> (0333) 416974</p>
                 <p><i class="fab fa-whatsapp"></i> +62 819-9967-6582</p>
                 <p><i class="far fa-envelope"></i> fortuna.print@example.com</p>
             </div>
-            <div class="footer-col">
-                <h4>Ikuti Kami</h4>
-                <div class="social-icons">
-                    <a href="https://www.tiktok.com/@fortunabanyuwangi?_r=1&_t=ZS-95sTjDBOPdk"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
-                <p style="margin-top: 15px;">Kunjungi langsung workshop kami di Jl. Widuri No.03</p>
+            <div class="footer-col" data-aos="fade-left">
+                <h4>Jam Operasional</h4>
+                <p><i class="far fa-calendar-alt"></i> Senin - Sabtu</p>
+                <p><i class="far fa-clock"></i> 08.00 - 20.00</p>
+                <p><i class="fas fa-phone-alt"></i> Minggu: Chat WA</p>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2025 Percetakan & Photo Copy Fortuna - All rights reserved. | Melayani dengan Integritas
+            &copy; 2025 Percetakan & Photo Copy Fortuna | All Rights Reserved | <a href="#">Kebijakan Privasi</a>
         </div>
     </div>
 </footer>
 
-<!-- Swiper JS -->
+<!-- Back to Top -->
+<div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- Custom JavaScript -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
