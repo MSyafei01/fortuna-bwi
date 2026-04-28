@@ -1,4 +1,3 @@
-// script.js - Versi Upgrade (Sama seperti sebelumnya)
 document.addEventListener('DOMContentLoaded', function() {
     // ========== INITIALIZE SWIPER SLIDER ==========
     const swiper = new Swiper('.mySwiper', {
@@ -133,11 +132,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    });
-
-    // ========== ADD STAGGERED ANIMATION TO SERVICE CARDS ==========
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
     });
 });
